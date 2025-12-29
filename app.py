@@ -28,11 +28,9 @@ CORS(app)
 
 USER_FILE = 'user.json'
 if not os.path.exists(USER_FILE):
-    with open(USER_FILE, 'w') as f:
-        # 初始化管理员账号
-        json.dump([
-            {"username": "admin", "password": "admin", "role": "admin"}
-        ], f)
+    with open(USER_FILE, 'w', encoding='utf-8') as f:
+        # 默认不创建账号，避免明文凭证
+        json.dump([], f, ensure_ascii=False, indent=2)
 
 
 
@@ -1573,11 +1571,32 @@ def test_email_connection():
 
 # 天气API部分
 # 和风天气API配置
-WEATHER_API_KEY = "a497cf5a4f624c8e882b0b0ed34e20da"  # 这里应该使用系统设置中的API Key
 WEATHER_CITY_API = "https://geoapi.qweather.com/v2/city/lookup"
 WEATHER_DAILY_API = "https://api.qweather.com/v7/weather/3d"
 WEATHER_HOURLY_API = "https://api.qweather.com/v7/weather/24h"
 HTTP_TIMEOUT = 15  # 外部HTTP请求超时时间（秒）
+
+# 从环境变量/数据库/配置文件读取天气API Key，避免硬编码泄露
+def get_weather_api_key():
+    env_key = os.getenv('WEATHER_API_KEY', '').strip()
+    if env_key:
+        return env_key
+
+    try:
+        setting = Setting.query.first()
+        if setting and setting.weather_api_key:
+            return setting.weather_api_key.strip()
+    except Exception as e:
+        app.logger.warning(f"读取数据库天气API Key失败: {e}")
+
+    try:
+        with open(SETTINGS_JSON_FILE, 'r', encoding='utf-8') as f:
+            settings_data = json.load(f)
+        return (settings_data.get('weatherApiKey') or '').strip()
+    except Exception as e:
+        app.logger.warning(f"读取配置文件天气API Key失败: {e}")
+
+    return ""
 
 # 常用城市列表
 POPULAR_CITIES = ["北京", "上海", "广州", "深圳", "成都", "杭州", "重庆", "西安", "武汉", "南京"]
@@ -1823,10 +1842,16 @@ def get_city_info(city_name):
         # 缓存中没有数据，从API获取
         print(f"请求城市信息API | 城市: {city_name}")
         
+        # 获取API Key，未配置时直接返回空结果
+        api_key = get_weather_api_key()
+        if not api_key:
+            app.logger.warning("未配置天气API Key，城市查询返回空结果")
+            return []
+
         # 请求参数
         params = {
             "location": city_name,
-            "key": WEATHER_API_KEY
+            "key": api_key
         }
         
         # 发送GET请求
@@ -1869,17 +1894,22 @@ def get_weather_data(city_id, city_name):
     print(f"[{start_time.strftime('%Y-%m-%d %H:%M:%S')}] 正在请求天气API | 城市: {city_name} | ID: {city_id}")
     
     try:
+        # 获取API Key，未配置时直接返回错误信息
+        api_key = get_weather_api_key()
+        if not api_key:
+            return {"code": "500", "message": "天气API Key未配置"}
+
         # 获取每日天气预报
         daily_params = {
             "location": city_id,
-            "key": WEATHER_API_KEY
+            "key": api_key
         }
         daily_response = requests.get(WEATHER_DAILY_API, params=daily_params, timeout=HTTP_TIMEOUT)
         
         # 获取每小时天气预报
         hourly_params = {
             "location": city_id,
-            "key": WEATHER_API_KEY
+            "key": api_key
         }
         hourly_response = requests.get(WEATHER_HOURLY_API, params=hourly_params, timeout=HTTP_TIMEOUT)
         
@@ -2064,13 +2094,13 @@ def init_db():
         if not Setting.query.first():
             # 如果同步失败且数据库为空，写入默认值，避免后续读取为空
             setting = Setting(
-                email_sender="alert@weathersystem.com",
+                email_sender="",
                 email_name="气象预警系统",
                 smtp_server="smtp.example.com",
                 smtp_port=587,
-                smtp_username="alert@weathersystem.com",
-                smtp_password="yourpassword",
-                weather_api_key="yourapikey",
+                smtp_username="",
+                smtp_password="",
+                weather_api_key="",
                 retry_count=3,
                 auto_retry=True,
                 admin_notifications=True,

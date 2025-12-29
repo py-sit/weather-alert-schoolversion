@@ -1681,26 +1681,26 @@ function downloadExcelTemplate() {
     '最近更新时间'
   ];
   
-  // 创建示例数据行
+  // 创建示例数据行（已去除个人信息）
   const exampleData = [
     [
-      '张三',
-      '经理',
-      '示例公司',
+      '',
+      '',
+      '',
       '北京',
-      'zhangsan@example.com',
-      '13800138000',
+      '',
+      '',
       '客户',
       '暴雨,高温',
       getCurrentDateTime()
     ],
     [
-      '李四',
-      '工程师',
-      '技术公司',
+      '',
+      '',
+      '',
       '上海',
-      'lisi@example.com',
-      '13900139000',
+      '',
+      '',
       '工程师',
       '台风,大雾',
       getCurrentDateTime()

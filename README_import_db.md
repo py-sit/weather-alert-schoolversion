@@ -112,7 +112,7 @@ python import_db.py source_database.db --no-backup
 
 ```
 发现重复的人员数据:
-  email: user@example.com
+  email: 示例邮箱
 请选择操作 (s=跳过, u=更新, a=全部跳过, A=全部更新):
 ```
 
