@@ -1,0 +1,111 @@
+[
+  {
+    "id": 3,
+    "name": "工程师-高温预警通知",
+    "subject": "高温预警",
+    "content": "高温预警注意！！！",
+    "lastModified": "2025-04-05",
+    "type": "高温",
+    "isActive": true,
+    "targetRole": "engineer",
+    "attachments": [
+      "2_CN_1743842945.pdf"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "高温预警通知",
+    "subject": "高温预警",
+    "content": "{{company}}\n{{name}} {{title}}:\n\n您好！\n\n因近期会有高温天气，会对您的室外及室内高温高湿环境下的作业员带来中暑的风险；\n\n在此提出防范提醒，还望提前做好防暑降温对策；\n\n附件内容是相关防范对策资料，供您参考！\n\n如有需要可联系我司担当人员或EQHS室  某某某 139--------\n\n以上，祝工作顺利！\n\n------------------------------------------------------------------------------------------\n\n日立工程建设（中国）有限公司\n\nEQHS室\n\nXXX\n\n139------\n\n江苏省苏州市苏州工业园区中新大道西128号加城大厦10楼（215021）\n\nxxx@szhpc.com.cn\n\nwww.hitachi.cn\n-------------------------------------------------------------------------------------------",
+    "lastModified": "2025-04-05",
+    "type": "高温",
+    "isActive": true,
+    "targetRole": "customer",
+    "attachments": [
+      "2_CN_1743842772.pdf"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "低温预警通知",
+    "subject": "低温预警",
+    "content": "低温预警！！！！",
+    "lastModified": "2025-04-05",
+    "type": "低温",
+    "isActive": true,
+    "targetRole": "customer",
+    "attachments": [
+      "1_CN_1743842994.pdf"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "低温预警通知",
+    "subject": "低温预警",
+    "content": "低温预警！！！！",
+    "lastModified": "2025-04-05",
+    "type": "低温",
+    "isActive": true,
+    "targetRole": "engineer",
+    "attachments": [
+      "1_CN_1743842994.pdf"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "极端低温",
+    "subject": "极端低温预警",
+    "content": "{{name}}\ntest",
+    "lastModified": "2025-05-04",
+    "type": "极端低温",
+    "isActive": true,
+    "targetRole": "all",
+    "attachments": [
+      "机场设计与规划_0504132201.png"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "大风预警",
+    "subject": "大风预警",
+    "content": "大风预警\n{{name}}{{title}}\n{{region}}{{date}}",
+    "lastModified": "2025-05-08",
+    "type": "大风",
+    "isActive": true,
+    "targetRole": "all",
+    "attachments": null
+  },
+  {
+    "id": 11,
+    "name": "大雨预警",
+    "subject": "大雨",
+    "content": "{{region}}{{date}} 大雨",
+    "lastModified": "2025-05-08",
+    "type": "暴雨",
+    "isActive": true,
+    "targetRole": "all",
+    "attachments": null
+  },
+  {
+    "id": 12,
+    "name": "test",
+    "subject": "【重要】{{地区}}大风预警通知",
+    "content": "111",
+    "lastModified": "2025-05-13",
+    "type": "大风",
+    "isActive": true,
+    "targetRole": "all",
+    "attachments": null
+  },
+  {
+    "id": 13,
+    "name": "雷电",
+    "subject": "雷电",
+    "content": "{{company}}雷",
+    "lastModified": "2025-05-22",
+    "type": "雷电",
+    "isActive": true,
+    "targetRole": "customer",
+    "attachments": []
+  }
+]

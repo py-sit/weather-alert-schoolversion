@@ -1,0 +1,75 @@
+[
+  {
+    "id": 2,
+    "type": "低温",
+    "condition": "最低温度 <= 20 度",
+    "status": "活跃",
+    "alertType": "parameter",
+    "createdAt": "2025-04-04"
+  },
+  {
+    "type": "沙尘暴",
+    "condition": "沙尘暴",
+    "status": "活跃",
+    "createdAt": "2025-04-04",
+    "alertType": "text",
+    "id": 4
+  },
+  {
+    "id": 5,
+    "type": "极端低温",
+    "condition": "最低温度 <= -10 度",
+    "status": "活跃",
+    "alertType": "parameter",
+    "createdAt": "2025-04-04"
+  },
+  {
+    "id": 6,
+    "type": "高温",
+    "condition": "最高温度 >= 0 度",
+    "status": "活跃",
+    "alertType": "parameter",
+    "createdAt": "2025-05-02"
+  },
+  {
+    "id": 7,
+    "type": "暴雨",
+    "condition": "24h降雨量 >= 20 mm",
+    "status": "活跃",
+    "alertType": "parameter",
+    "createdAt": "2025-05-08"
+  },
+  {
+    "type": "大雾",
+    "condition": "能见度 <= 5 km",
+    "status": "活跃",
+    "createdAt": "2025-05-08",
+    "alertType": "parameter",
+    "id": 8
+  },
+  {
+    "type": "大风",
+    "condition": "风速 >= 5 km/h",
+    "advanceTime": "1",
+    "status": "活跃",
+    "createdAt": "2025-05-08",
+    "alertType": "parameter",
+    "id": 9
+  },
+  {
+    "id": 10,
+    "type": "雷电",
+    "condition": "雷阵雨",
+    "status": "活跃",
+    "alertType": "text",
+    "createdAt": "2025-05-22"
+  },
+  {
+    "type": "台风",
+    "condition": "台风",
+    "status": "活跃",
+    "createdAt": "2025-09-23",
+    "alertType": "text",
+    "id": 11
+  }
+]

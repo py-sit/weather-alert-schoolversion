@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>气象预警邮件通知系统 - 登录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles-login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/umd/lucide-icons.min.css">
+</head>
+<body class="bg-[#0f0f0f] text-white flex flex-col min-h-screen">
+    <div class="pattern-overlay absolute inset-0 opacity-5 pointer-events-none"></div>
+    
+    <div class="flex-1 flex flex-col md:flex-row">
+        <!-- Left side - Brand area -->
+        <div class="w-full md:w-2/5 p-6 md:p-12 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center mb-2">
+                    <img src="logo.jpeg" alt="Logo" class="h-10 w-10 mr-3">
+                    <h1 class="text-2xl font-medium">气象预警通知系统</h1>
+                </div>
+                <p class="text-gray-400 font-geist-mono text-sm max-w-md mt-3">专业级气象预警邮件通知平台，保障您及时获取关键天气信息</p>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="flex items-start mb-6">
+                    <div class="bg-[#1e1e1e] rounded-full p-2 mr-4">
+                        <img src="alert-icon.svg" alt="Alert Icon" class="h-6 w-6">
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-1">实时预警通知</h3>
+                        <p class="text-gray-400 text-sm">系统可根据区域实时推送气象预警信息，让您第一时间作出应对措施</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start mb-6">
+                    <div class="bg-[#1e1e1e] rounded-full p-2 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-1">安全可靠</h3>
+                        <p class="text-gray-400 text-sm">采用业内领先的数据加密技术，保障用户信息与预警数据传输安全</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-[#1e1e1e] rounded-full p-2 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-1">个性化订阅</h3>
+                        <p class="text-gray-400 text-sm">根据您的需求定制预警通知，自由选择关注区域、级别与通知频率</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden md:block text-gray-500 text-xs mt-6">
+                <p>© 2025 气象预警邮件通知系统</p>
+            </div>
+        </div>
+        
+        <!-- Right side - Login form -->
+        <div class="w-full md:w-3/5 bg-[#141414] rounded-t-3xl md:rounded-none p-6 md:p-12 flex items-center justify-center">
+            <div class="w-full max-w-md">
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-1">登录系统</h2>
+                    <p class="text-gray-400 text-sm">请输入您的账号信息以访问系统</p>
+                </div>
+                
+                <div id="login-error" class="hidden mb-6 p-4 bg-red-900/20 border border-red-800 rounded-lg">
+                    <p class="text-red-400 text-sm font-medium">登录失败，请检查用户名和密码是否正确</p>
+                </div>
+                
+                <form id="login-form" class="space-y-5">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-400 mb-2">用户名/邮箱</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <input type="text" id="username" name="username" required
+                                class="bg-[#1e1e1e] border border-[#303030] text-white rounded-lg block w-full pl-10 p-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="请输入用户名或邮箱">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="password" class="block text-sm font-medium text-gray-400">密码</label>
+                            <a href="#" class="text-blue-500 text-sm hover:text-blue-400 transition-colors">忘记密码?</a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            </div>
+                            <input type="password" id="password" name="password" required
+                                class="bg-[#1e1e1e] border border-[#303030] text-white rounded-lg block w-full pl-10 p-3 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="请输入密码">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" id="toggle-password" class="text-gray-500 hover:text-gray-400 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toggle-password-icon"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded bg-[#303030] border-[#444] focus:ring-blue-500 text-blue-500">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-400">记住我</label>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3 transition-all duration-150 flex items-center justify-center">
+                            <span>登录</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-8 text-center text-sm text-gray-500">
+                    <p>登录即表示您同意我们的 <a href="#" class="text-blue-500 hover:text-blue-400">服务条款</a> 和 <a href="#" class="text-blue-500 hover:text-blue-400">隐私政策</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-[#141414] p-4 md:hidden text-center">
+        <p class="text-gray-500 text-xs">© 2025 气象预警邮件通知系统</p>
+        <p class="text-xs mt-2">
+            <a href="https://flowith.net" target="_blank" class="text-gray-400 hover:text-gray-300 transition-colors">由苏州壹芯科技工作室制作.</a>
+        </p>
+    </footer>
+    
+    <div class="hidden md:block absolute right-4 bottom-4">
+        <a href="https://flowith.net" target="_blank" class="text-gray-500 hover:text-gray-400 text-xs transition-colors">由苏州壹芯科技工作室制作.</a>
+    </div>
+    
+    <script src="script-login.js"></script>
+    <script>
+        // 检查是否已登录
+        document.addEventListener('DOMContentLoaded', function() {
+            // 从sessionStorage中检查登录状态
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+            const userRole = sessionStorage.getItem('userRole');
+            
+            if (isLoggedIn === 'true') {
+                if (userRole === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    // 普通用户跳转接口，后续可接入其他系统
+                    window.location.href = 'index.html';
+                }
+            }
+            
+            // 密码显示切换功能
+            const togglePassword = document.getElementById('toggle-password');
+            const passwordInput = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+            });
+            
+            // 登录表单提交处理
+            const loginForm = document.getElementById('login-form');
+            const loginError = document.getElementById('login-error');
+            
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('remember-me').checked;
+                
+                // 隐藏之前的错误信息
+                loginError.classList.add('hidden');
+                
+                // 显示登录按钮加载状态
+                const submitButton = loginForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<span>登录中...</span>';
+                submitButton.disabled = true;
+                
+                try {
+                    // 调用后端API进行用户验证
+                    const response = await fetch('/api/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            username: username,
+                            password: password
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        // 登录成功，保存用户信息
+                        sessionStorage.setItem('isLoggedIn', 'true');
+                        sessionStorage.setItem('currentUser', result.user.username);
+                        sessionStorage.setItem('userRole', result.user.role);
+                        
+                        if (rememberMe) {
+                            localStorage.setItem('rememberedUser', username);
+                        } else {
+                            localStorage.removeItem('rememberedUser');
+                        }
+                        
+                        // 根据角色跳转
+                        if (result.user.role === 'admin') {
+                            window.location.href = 'admin.html';
+                        } else {
+                            window.location.href = 'index.html';
+                        }
+                    } else {
+                        // 登录失败，显示错误信息
+                        loginError.querySelector('p').textContent = result.message || '登录失败，请检查用户名和密码是否正确';
+                        loginError.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('登录请求失败:', error);
+                    loginError.querySelector('p').textContent = '网络错误，请检查服务器是否正常运行';
+                    loginError.classList.remove('hidden');
+                } finally {
+                    // 恢复登录按钮状态
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                }
+            });
+            
+            // 如果有记住的用户，自动填充用户名
+            const rememberedUser = localStorage.getItem('rememberedUser');
+            if (rememberedUser) {
+                document.getElementById('username').value = rememberedUser;
+                document.getElementById('remember-me').checked = true;
+            }
+        });
+        
+        window.addEventListener("wheel", (e)=> {
+            const isPinching = e.ctrlKey
+            if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+</body>
+</html>

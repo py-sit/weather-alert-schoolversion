@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CDN文件下载页</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .file-item {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .file-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .file-desc {
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #2563eb;
+        }
+        .instructions {
+            background-color: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>气象预警系统 - CDN文件下载帮助</h1>
+    
+    <div class="instructions">
+        <h2>使用说明</h2>
+        <p>由于网络问题导致无法直接从CDN加载文件，请按照以下步骤手动下载所需文件：</p>
+        <ol>
+            <li>点击下面每个文件的"下载"按钮</li>
+            <li>将下载的文件保存到对应的vendor目录中</li>
+            <li>确保文件名和路径与index.html中引用的一致</li>
+        </ol>
+    </div>
+    
+    <h2>需要下载的文件</h2>
+    
+    <div class="file-item">
+        <div class="file-title">Tailwind CSS</div>
+        <div class="file-desc">CSS框架，保存到 vendor/css/tailwind.min.css</div>
+        <a class="download-btn" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" download="tailwind.min.css">下载</a>
+    </div>
+    
+    <div class="file-item">
+        <div class="file-title">Lucide 图标库</div>
+        <div class="file-desc">SVG图标库，保存到 vendor/js/lucide.min.js</div>
+        <a class="download-btn" href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" download="lucide.min.js">下载</a>
+    </div>
+    
+    <div class="file-item">
+        <div class="file-title">Chart.js</div>
+        <div class="file-desc">图表库，保存到 vendor/js/chart.umd.min.js</div>
+        <a class="download-btn" href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js" download="chart.umd.min.js">下载</a>
+    </div>
+    
+    <div class="file-item">
+        <div class="file-title">SweetAlert2</div>
+        <div class="file-desc">弹窗库，保存到 vendor/js/sweetalert2.all.min.js</div>
+        <a class="download-btn" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js" download="sweetalert2.all.min.js">下载</a>
+    </div>
+    
+    <div class="file-item">
+        <div class="file-title">SheetJS (XLSX)</div>
+        <div class="file-desc">Excel处理库，保存到 vendor/js/xlsx.full.min.js</div>
+        <a class="download-btn" href="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" download="xlsx.full.min.js">下载</a>
+    </div>
+
+    <div class="instructions">
+        <h3>离线下载方法</h3>
+        <p>如果上面的"下载"按钮仍然无法工作，您可以从另一台可以访问互联网的电脑上：</p>
+        <ol>
+            <li>访问上述CDN链接并下载所有文件</li>
+            <li>通过U盘或其他方式将文件传输到当前服务器</li>
+            <li>放入相应的vendor目录中</li>
+            <li>确保文件名和路径正确</li>
+        </ol>
+    </div>
+</body>
+</html> 

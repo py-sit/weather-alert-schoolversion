@@ -1,0 +1,25 @@
+[Unit]
+Description=Weather Alert Service (Flask + Gunicorn)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/weather_alert
+Environment=HOST=0.0.0.0
+Environment=PORT=8000
+Environment=WORKERS=4
+Environment=THREADS=8
+Environment=TIMEOUT=120
+ExecStart=/opt/weather_alert/scripts/run_prod.sh
+Restart=always
+RestartSec=5
+User=www-data
+Group=www-data
+KillSignal=SIGTERM
+TimeoutStopSec=30
+StandardOutput=append:/opt/weather_alert/logs/service.log
+StandardError=append:/opt/weather_alert/logs/service.error.log
+
+[Install]
+WantedBy=multi-user.target

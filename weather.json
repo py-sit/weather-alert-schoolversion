@@ -1,0 +1,168 @@
+{
+    "无锡": {
+        "region": "无锡",
+        "updateTime": "2025-12-11 10:18:05",
+        "forecasts": [
+            {
+                "date": "2025-12-11",
+                "tempMax": "17",
+                "tempMin": "8",
+                "textDay": "多云",
+                "textNight": "阴",
+                "windSpeed": "3",
+                "windDir": "东北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-12",
+                "tempMax": "12",
+                "tempMin": "6",
+                "textDay": "多云",
+                "textNight": "阴",
+                "windSpeed": "3",
+                "windDir": "东风",
+                "precip": "0.0",
+                "vis": "24"
+            },
+            {
+                "date": "2025-12-13",
+                "tempMax": "8",
+                "tempMin": "0",
+                "textDay": "小雨",
+                "textNight": "晴",
+                "windSpeed": "3",
+                "windDir": "西北风",
+                "precip": "2.4",
+                "vis": "24"
+            },
+            {
+                "date": "2025-12-14",
+                "tempMax": "7",
+                "tempMin": "0",
+                "textDay": "晴",
+                "textNight": "晴",
+                "windSpeed": "3",
+                "windDir": "西风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-15",
+                "tempMax": "12",
+                "tempMin": "2",
+                "textDay": "晴",
+                "textNight": "晴",
+                "windSpeed": "3",
+                "windDir": "东南风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-16",
+                "tempMax": "17",
+                "tempMin": "7",
+                "textDay": "多云",
+                "textNight": "阴",
+                "windSpeed": "3",
+                "windDir": "西风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-17",
+                "tempMax": "14",
+                "tempMin": "3",
+                "textDay": "晴",
+                "textNight": "多云",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            }
+        ]
+    },
+    "成都": {
+        "region": "成都",
+        "updateTime": "2025-12-11 10:18:06",
+        "forecasts": [
+            {
+                "date": "2025-12-11",
+                "tempMax": "15",
+                "tempMin": "5",
+                "textDay": "阴",
+                "textNight": "阴",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-12",
+                "tempMax": "14",
+                "tempMin": "6",
+                "textDay": "阴",
+                "textNight": "多云",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-13",
+                "tempMax": "11",
+                "tempMin": "0",
+                "textDay": "晴",
+                "textNight": "晴",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-14",
+                "tempMax": "12",
+                "tempMin": "2",
+                "textDay": "晴",
+                "textNight": "晴",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-15",
+                "tempMax": "12",
+                "tempMin": "4",
+                "textDay": "多云",
+                "textNight": "多云",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-16",
+                "tempMax": "15",
+                "tempMin": "6",
+                "textDay": "多云",
+                "textNight": "多云",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            },
+            {
+                "date": "2025-12-17",
+                "tempMax": "15",
+                "tempMin": "7",
+                "textDay": "多云",
+                "textNight": "多云",
+                "windSpeed": "3",
+                "windDir": "北风",
+                "precip": "0.0",
+                "vis": "25"
+            }
+        ]
+    }
+}

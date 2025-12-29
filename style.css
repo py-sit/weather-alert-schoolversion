@@ -1,0 +1,264 @@
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+  }
+  
+  /* Form Controls */
+  input, select, textarea {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+    border-color: #3b82f6;
+  }
+  
+  /* Weather Card Styles */
+  .weather-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .weather-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .weather-card.selected {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  .weather-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Tab Styles */
+  .tab-btn.active {
+    color: #1d4ed8;
+    background-color: #eff6ff;
+    font-weight: 500;
+  }
+  
+  /* Alert Status Badges */
+  .status-badge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .status-success {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .status-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  .status-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+  
+  /* Animated Weather Effects */
+  @keyframes rain {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .rain-animation {
+    position: absolute;
+    width: 2px;
+    background: #3b82f6;
+    opacity: 0.7;
+    top: 0;
+    animation: rain 1.5s infinite linear;
+  }
+  
+  .pulse-animation {
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #sidebar {
+      position: fixed;
+      z-index: 50;
+      transform: translateX(-100%);
+      width: 240px;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      box-shadow: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #sidebar.open {
+      transform: translateX(0);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* 增加侧边栏触发区域 */
+    #sidebar-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+    
+    #sidebar-toggle:hover, #sidebar-toggle:active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* 侧边栏打开时，添加遮罩层 */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    body:has(#sidebar.open)::after {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* 修复部分移动端的grid布局 */
+    .grid-cols-3 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    /* 增大触摸目标区域 */
+    #fab-main-btn {
+      width: 56px !important;
+      height: 56px !important;
+    }
+    
+    /* 确保菜单始终在视图内 */
+    .fixed.bottom-10.right-10.z-50 {
+      bottom: 1.5rem !important;
+      right: 1.5rem !important;
+      transition: transform 0.3s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    /* 悬浮菜单的子按钮 */
+    #fab-menu button {
+      width: 48px !important;
+      height: 48px !important;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* 增强菜单展开的视觉效果 */
+    #fab-menu:not(.hidden) {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* 适应全面屏设备的底部安全区域 */
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      .fixed.bottom-10.right-10.z-50 {
+        padding-bottom: env(safe-area-inset-bottom);
+        bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+    
+    /* 悬浮菜单的操作反馈 */
+    #action-toast {
+      bottom: 5rem !important;
+      right: 1.5rem !important;
+    }
+    
+    /* 拖动背景样式 */
+    #drag-background {
+      background-color: transparent;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .grid-cols-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  /* Utility Classes */
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+  
+  .shadow-hover:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  

@@ -1,0 +1,17 @@
+{
+  "emailSender": "1733329466@qq.com",
+  "emailName": "预警系统",
+  "smtpServer": "smtp.qq.com",
+  "smtpPort": 587,
+  "smtpUsername": "1733329466@qq.com",
+  "smtpPassword": "tlisopwcckxvcadh",
+  "weatherApiKey": "a497cf5a4f624c8e882b0b0ed34e20da",
+  "firstAlertTime": "10:18",
+  "firstalert": 10,
+  "intervalPrediction": true,
+  "adminNotifications": false,
+  "alertAdvanceTime": 4,
+  "warningInterval": 12,
+  "autoApproval": false,
+  "lastUpdated": "2025-12-11T10:17:15.799430"
+}

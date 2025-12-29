@@ -1,0 +1,15 @@
+{
+  "qweather_api_key": "",
+  "api_settings": {
+    "timeout": 5000,
+    "retry_count": 3
+  },
+  "ui_settings": {
+    "auto_refresh_interval": 300000,
+    "show_loading_animation": true
+  },
+  "warning_display": {
+    "max_warnings_per_city": 10,
+    "show_expired_warnings": false
+  }
+}

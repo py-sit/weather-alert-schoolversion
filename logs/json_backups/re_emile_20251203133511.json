@@ -1,0 +1,108 @@
+[
+    {
+        "to_email": "2457239568@qq.com",
+        "to_name": "魏岩懿",
+        "subject": "低温预警",
+        "content": "低温预警！！！！",
+        "company": "123",
+        "region": "成都",
+        "weather_type": "低温",
+        "alert_date": "2025-12-03",
+        "template_type": "低温",
+        "condition": "最低温度 <= 20 度",
+        "attachments": [
+            "1_CN_1743842994.pdf"
+        ],
+        "is_duplicate": false
+    },
+    {
+        "to_email": "1733329466@qq.com",
+        "to_name": "4124",
+        "subject": "低温预警",
+        "content": "低温预警！！！！",
+        "company": "24151",
+        "region": "无锡",
+        "weather_type": "低温",
+        "alert_date": "2025-12-03",
+        "template_type": "低温",
+        "condition": "最低温度 <= 20 度",
+        "attachments": [
+            "1_CN_1743842994.pdf"
+        ],
+        "is_duplicate": false
+    },
+    {
+        "to_email": "1733329466@qq.com",
+        "to_name": "魏岩懿",
+        "subject": "低温预警",
+        "content": "低温预警！！！！",
+        "company": "123",
+        "region": "桂林",
+        "weather_type": "低温",
+        "alert_date": "2025-12-03",
+        "template_type": "低温",
+        "condition": "最低温度 <= 20 度",
+        "attachments": [
+            "1_CN_1743842994.pdf"
+        ],
+        "is_duplicate": false
+    },
+    {
+        "to_email": "1733329466@qq.com",
+        "to_name": "魏岩懿",
+        "subject": "大风预警",
+        "content": "大风预警\n魏岩懿213\n桂林2025-12-03",
+        "company": "123",
+        "region": "桂林",
+        "weather_type": "大风",
+        "alert_date": "2025-12-03",
+        "template_type": "大风",
+        "condition": "风速 >= 5 km/h",
+        "is_duplicate": false
+    },
+    {
+        "to_email": "123@qq.com",
+        "to_name": "魏岩懿",
+        "subject": "低温预警",
+        "content": "低温预警！！！！",
+        "company": "123",
+        "region": "海口",
+        "weather_type": "低温",
+        "alert_date": "2025-12-03",
+        "template_type": "低温",
+        "condition": "最低温度 <= 20 度",
+        "attachments": [
+            "1_CN_1743842994.pdf"
+        ],
+        "is_duplicate": false
+    },
+    {
+        "to_email": "123@qq.com",
+        "to_name": "魏岩懿",
+        "subject": "大风预警",
+        "content": "大风预警\n魏岩懿123\n海口2025-12-03",
+        "company": "123",
+        "region": "海口",
+        "weather_type": "大风",
+        "alert_date": "2025-12-03",
+        "template_type": "大风",
+        "condition": "风速 >= 5 km/h",
+        "is_duplicate": false
+    },
+    {
+        "to_email": "1733329466@qq.com",
+        "to_name": "py-sit's Org",
+        "subject": "低温预警",
+        "content": "低温预警！！！！",
+        "company": "123",
+        "region": "南通",
+        "weather_type": "低温",
+        "alert_date": "2025-12-03",
+        "template_type": "低温",
+        "condition": "最低温度 <= 20 度",
+        "attachments": [
+            "1_CN_1743842994.pdf"
+        ],
+        "is_duplicate": false
+    }
+]
